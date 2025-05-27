@@ -6,7 +6,7 @@ import sys
 import json
 import time
 
-class ConsumeConsumer(BaseConsumer):
+class ConsumeConsumer(BaseConsumer): # MSG 리스트 형태로 여러건씩 가져오는 Consume 실습
     def __init__(self, group_id):
         super().__init__(group_id)
         self.topics = ['apis.seouldata.rt-bicycle']

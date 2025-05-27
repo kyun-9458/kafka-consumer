@@ -13,7 +13,7 @@ class AutoCommitConsumer(BaseConsumer):
         conf = {'bootstrap.servers': self.BOOTSTRAP_SERVERS,
                 'group.id': self.group_id,
                 'auto.offset.reset': 'latest',              # offset을 파티션내에 가장 마지막부터 처리
-                'enable.auto.commit': 'true',
+                'enable.auto.commit': 'true',               # enable.auto.commit = 'true' 설정 시 MSG 유실 혹은 중복 실행 가능
                 'auto.commit.interval.ms': '60000'         # 기본 값: 5000 (5초)
                 }
 

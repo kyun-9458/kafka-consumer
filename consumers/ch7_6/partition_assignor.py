@@ -5,7 +5,7 @@ import pandas as pd
 import json
 import time
 
-class PartitionAssignor(BaseConsumer): # Rebalancing 실습
+class PartitionAssignor(BaseConsumer): # Broker join 및 left 시  Rebalancing 실습
     def __init__(self, group_id):
         super().__init__(group_id)
         self.topics = ['apis.seouldata.rt-bicycle']
@@ -14,7 +14,7 @@ class PartitionAssignor(BaseConsumer): # Rebalancing 실습
                 'group.id': self.group_id,
                 'auto.offset.reset': 'earliest',
                 'enable.auto.commit': 'false',
-                'partition.assignment.strategy':'cooperative-sticky'   # range, roundrobin, cooperative-sticky
+                'partition.assignment.strategy':'cooperative-sticky'   # range, roundrobin, cooperative-sticky 총 5개? 알고리즘 중 cooperative-sticky 알고리즘 선택
                 }
 
         self.consumer = Consumer(conf)

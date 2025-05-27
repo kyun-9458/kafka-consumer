@@ -1,4 +1,4 @@
-# Kafka Consumer로 이름 변경 필요ㅎ
+# Kafka Consumer로 이름 변경 필요
 name: deploy to kafka broker
 on:
   # 어떤 브랜치에서 어떤 동작 발생시 actions 를 실행시킬 것인지 정의
@@ -28,8 +28,8 @@ jobs:
       # aws 접속시 필요한 키 셋팅하는 사전 정의된 action 사용
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-        aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }} # AWS Access Key 암호화 처리
+        aws-secret-access-key: ${{ secrets.AWS_ACCESS_SECRET_KEY }} # AWS Access Secret Key 암호화 처리
         aws-region: ap-northeast-2
 
     - name: upload to S3

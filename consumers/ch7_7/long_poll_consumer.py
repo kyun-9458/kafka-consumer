@@ -7,7 +7,7 @@ import time
 import random
 
 
-class LongPollConsumer(BaseConsumer):
+class LongPollConsumer(BaseConsumer): # max.poll.interval.ms 45s 설정으로 time.sleep(rand_sleep_sec) : 60s 선택 시 session time out 실습 
     def __init__(self, group_id):
         super().__init__(group_id)
         self.topics = ['apis.seouldata.rt-bicycle']

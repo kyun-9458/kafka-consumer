@@ -21,11 +21,11 @@ class PollConsumer(BaseConsumer):
         self.consumer.subscribe(self.topics, on_assign=self.callback_on_assign)
 
 
-    def poll(self):
+    def poll(self): # MSG 단 건(Poll) 실습
         msg_cnt = 0
         try:
             while True:
-                msg = self.consumer.poll(timeout=1.0) # 메시지를 단 건으로 가져올 때
+                msg = self.consumer.poll(timeout=1.0) # 메시지를 단 건으로 가져올 때 poll
                 if msg is None: continue
 
                 error = msg.error()
