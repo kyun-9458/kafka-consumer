@@ -5,7 +5,7 @@ import pandas as pd
 import json
 import time
 
-class PartitionAssignor(BaseConsumer):
+class PartitionAssignor(BaseConsumer): # Rebalancing 실습
     def __init__(self, group_id):
         super().__init__(group_id)
         self.topics = ['apis.seouldata.rt-bicycle']
